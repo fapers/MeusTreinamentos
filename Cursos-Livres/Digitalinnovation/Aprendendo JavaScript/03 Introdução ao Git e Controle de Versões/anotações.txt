@@ -1,0 +1,38 @@
+O que é Controle de Versão? É um software que tem a finalidade de gerenciar diferentes versões no desenvolvimento de um documento qualquer. Existem várias ferramentas como Subversion/SVN, Mercurial, CVS e Git.
+
+Como lidar com o Git e seus comandos? Git é um sistema de controle de versão distribuído e um sistema de gerenciamento de código fonte, com ênfase em velocidade. Foi desenvolvido por Linus Torvalds para o desenvolvimento do kernel Linux.
+git init # Inicializar o gerenciamento do repositório local
+git clone # para copiar um projeto completo e fazer suas devidas alterações ou somente curiosidade
+git add . ou git add <<nome_arquivo>> # adiciona os arquivos para ser entregues, commitados
+git commit -m "mensagem de commit" # coloca uma informação do que foi alterado no arquivo
+git status # exibe as arquivos que estão faltando enviar ou commitar, no repositório local
+git branch <<nome da branch>> # organização de alterações como por exemplo "master", "release", etc.
+git log # devolve um histórico de commit do todo o percurso do projeto
+
+Como subir o código no Github?
+git push # enviar as alterações do arquivo para o repositório git previamente configurado
+git pull # baixar as alterações do repositório remoto para o local
+git merge # juntar as alterações das branchs exemplo justar release1 com release2
+
+Exemplo de repositórios remotos
+Bitbucket
+Gitlab
+Github
+
+
+Informações práticas.
+---------------------
+Entre num terminal e digite: mkdir introducao-ao-git # para criar uma nova pasta
+Digite: cd introducao-ao-git # para entrar na pasta 
+Digite: git init # para iniciar o gerenciamento, criando um repositório local dentro da pasta
+Digite: git status # veja que aparece a mensagem que não há nada para comitar(enviar) no branch master
+Digite: touch index.html # cria um novo arquivo index.html dentro da pasta
+Digite: git status # agora aparece a mensagem informando que tem um arquivo que não está sendo monitorado. Ele está em vermelho solicitando que utilizemos o comando git add index.html
+Digite: git add index.html # para começar o monitoramento do arquivo
+Digite: git status # agora o arquivo está verde aguardando o comando commit -m "mensagem"
+Digite: git commit -m "Meu primeiro commit" # a versão do arquivo agora está gravada
+Digite: git status # agora não tem nada para commitar
+Digite: git log # Exibe informações de commits que uma determinada aplicação sofreu 
+
+
+
