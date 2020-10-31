@@ -36,9 +36,7 @@ function questao3
         else
             valores(end+1) = x;
         end
-        plot(valores);
-        % xlabel(['Acumulado: ' sum(valores)]);
-        % plot(valores,'bo', 'linewith', 3);
+        plot(valores, 'b--o');
         xlabel(['Acumulado: ' num2str(sum(valores))]);
     end
 end
