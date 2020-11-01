@@ -1,0 +1,202 @@
+QUESTÃO(1)
+
+Implemente uma função que leia vários números inseridos pelo usuário (utilize zero como critério de parada) e retorne:
+
+todos os valores inseridos
+o número de entradas
+a mediana dos valores armazenados
+% Entre com o comando >> [a,b,c] = aula03_q1();
+
+% a: armazena todos os valores inseridos
+
+% b: armazena o número de entradas
+
+% c: armazena a mediana dos valores armazenados.
+
+
+
+function [todos, qtde, mediana] = aula03_q1()
+
+    flag = 1;
+
+    contador = 0;
+
+    valores = [];
+
+    while(flag)
+
+       x = input('Digite um valor("0" para sair): ');
+
+       if (x == 0)
+
+           flag = 0;
+
+       else
+
+           contador = contador + 1;
+
+           valores(end+1) = x;
+
+       end
+
+    end
+
+    mediana = median(valores);
+
+    todos = valores;
+
+    qtde = contador;
+
+end
+
+QUESTÃO(2) 
+Implemente uma função que calcule o fatorial de um número recebido como parâmetro sem utilizar estruturas de loop (FOR e WHILE).
+
+function R = aula03_q2(x)
+
+    R = factorial(x);
+
+end
+
+
+QUESTÃO(3)
+Implemente uma função que leia os valores inseridos pelo usuário (utilize zero como critério de parada) e chame outra função para exibir um gráfico com os valores inseridos.
+
+function aula03_q3()
+
+    flag = 1;
+
+    numeros = [];
+
+    while(flag)
+
+       x = input('Digite um valor("0" para sair): ');
+
+       if (x == 0)
+
+           flag = 0;           
+
+       else
+
+           numeros(end+1) = x;
+
+       end
+
+    end
+
+    exibirGrafico(numeros);
+
+end
+
+
+
+function exibirGrafico(n)
+
+    figure
+
+    plot(n, 'ro')
+
+    grid on;
+
+    xlabel('Ordem da digitação dos números');
+
+    ylabel('Valores digitados');
+
+end
+
+QUESTÃO(4)
+A partir das variáveis abaixo, implemente uma função que receba os vetores de nota (N) e frequência (F) de um grupo de alunos e retorne APROVADO ou REPROVADO para cada um. Utilize 70 como nota mínima e 75% de frequência.
+
+n = 50; % número de alunos
+N = 30 + randi(70,n,1); % notas entre 30 e 100
+F = 0.3 + 0.7 * rand(n,1); % frequência entre 0.3 e 1
+function [resultado] = aula03_q4(n, N, F)
+
+    r = N >= 70 & F >= 0.75;
+
+    msg = {};
+
+    for i=1:1:n
+
+        if(r(i) == 1)
+
+            msg(end+1) = cellstr('APROVADO');
+
+        else
+
+            msg(end+1) = cellstr('REPROVADO');
+
+        end
+
+    end
+
+    resultado = msg;
+
+end
+
+QUESTÃO(5)
+Implemente uma função que receba como entrada um valor inteiro (n) e:
+
+se n == 1, gere um gráfico com 100 pontos aleatórios no intervalo entre 10 e 20
+se n == 2, gere um gráfico para a função F(x) = x^2 para o intervalo entre -10 e 10
+se n == 3, gere um gráfico com 100 pontos aleatórios ordenados no intervalo entre 10 e 20
+exiba uma mensagem de erro, para os demais casos
+function x = aula03_q5(n)     
+
+   switch n
+
+       case 1
+
+           xmin = 10;
+
+           xmax = 20;
+
+           qtde = 100;
+
+           x = xmin + (xmax - xmin) * rand(qtde,1);
+
+           plot(x, 'r.');
+
+           grid on; 
+
+       case 2
+
+           xmin = -10;
+
+           xmax = 10;
+
+           qtde = 1000;
+
+           x = xmin + (xmax - xmin) * rand(qtde,1);
+
+           FX = x.^ 2;
+
+           plot(x,FX, 'g.');
+
+           axis([-12 12 -10 110]);
+
+           %grid on; 
+
+       case 3
+
+           xmin = 10;
+
+           xmax = 20;
+
+           qtde = 100;
+
+           x = sort(xmin + (xmax - xmin) * rand(qtde,1));
+
+           plot(x, 'c.');
+
+           grid on; 
+
+       otherwise
+
+           disp('Opção inválida!');
+
+           x = '';
+
+   end
+
+end
