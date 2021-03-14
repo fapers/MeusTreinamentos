@@ -1,0 +1,14 @@
+Uma fábrica produz dois artigos A e B, que devem passar por duas máquinas diferentes M1 e M2. M1 tem 12 horas de capacidade diária disponível e M2 tem 5 horas. Cada unidade de produto A requer 2 horas em ambas as máquinas. Cada unidade de produto B requer 3 horas em M1 e 1 hora em M2. O lucro líquido de A é de R$60,00 por unidade e o de B, R$ 70,00 por unidade. Crie o modelo matemático para determinar a quantidade a ser produzida de A e B a fim de se ter um lucro máximo.
+
+Variáveis de decisão: O que podemos conseguir alterar no problema são as quantidades de artigos A e B, logo as variáveis de decisão são:
+
+qA: quantidade produzida do artigo A
+qB: quantidade produzida do artigo B
+Função objetivo:
+
+Max F(qA, qB) = 60 * qA + 70 * qB
+Restrições:
+
+r1: 2 * qA + 3 * qB <= 12 // horas de capacidade diária disponível da máquina M1
+r2: 2 * qA + 1 * qB <= 5 // horas de capacidade diária disponível da máquina M2
+r3: qA, qB são pertencentes ao conjunto dos números naturais
