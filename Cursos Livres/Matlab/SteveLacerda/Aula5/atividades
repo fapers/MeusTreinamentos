@@ -1,0 +1,67 @@
+Resolução das atividades da aula5 do curso de Matlab do portal https://ead.stevelacerda.com/
+
+QUESTÃO1
+% Implemente uma função que retorne o fatorial de um número N passado como 
+% parâmetro e o tempo total de processamento da função.
+function [r,t] = questao1(n)
+    tic;
+    r = factorial(n);
+    t = toc;
+end
+
+
+QUESTÃO2
+% Implemente uma função que gere um gráfico para a função peaks 
+% (disponível no MATLAB). Utilize o intervalo entre -5 e 5 para X e Y.
+function questao2()
+    x = -5:0.1:5;
+    [X,Y] = meshgrid(x);
+    peaks(X,Y);
+    colorbar;
+    colormap copper
+end
+
+
+QUESTÃO3
+% Implemente uma função que leia vários números inseridos pelo usuário 
+% (utilize zero como critério de parada) e exiba um gráfico com os valores 
+% inseridos até o momento e o valor acumulado como rótulo do eixo 
+% horizontal. O gráfico deve ser atualizado após a inserção de cada número.
+function questao3
+    valores = [];
+    while true
+        x = input('Digite um valor: ');
+        if (x == 0)
+            break;
+        else
+            valores(end+1) = x;
+        end
+        plot(valores, 'b--o');
+        xlabel(['Acumulado: ' num2str(sum(valores))]);
+    end
+end
+
+
+QUESTÃO4
+% Implemente uma função que leia vários números inseridos pelo usuário 
+% (utilize zero como critério de parada) e salve os valores em um arquivo 
+% .MAT. Ao final, a função deve exibir um histograma com os valores salvos.
+function questao4()
+    %load('questao4.mat');
+    %valores = [valores leianumeros()];
+    valores = leianumeros();
+    save('questao4.mat','valores');
+    histogram(valores);
+    %load questao4.mat;
+end
+
+
+QUESTÃO5
+% No MATLAB, é possível utilizar funções como cputime e tic|toc para 
+% calcular o tempo gasto para execução de um código. Qual você utilizou na 
+% questão anterior? Por quê?
+
+Utilizei tic|toc, foi a função que achei mais simples implementação, pois A 
+função "tic" registra a hora atual e a toc usa o valor registrado para calcular 
+o tempo decorrido. Depende da aplicação, a escolha de uma ou outra função.
+
