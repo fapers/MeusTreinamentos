@@ -1,6 +1,6 @@
 # MeusTreinamentos
 
-## Meus Códigos em:
+## Meus Códigos:
  - C
  - C++
  - C#
