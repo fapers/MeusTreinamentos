@@ -94,7 +94,38 @@ r3: qA, qB são pertencentes ao conjunto dos números naturais<br/>
 
 6) Certa firma processa dois tipos de fibra sintética (A e B). No departamento responsável pela mistura de ingredientes, que dispõe de 200 horas por mês, a produção é limitada por 2 horas por tonelada da fibra A e 4 horas por tonelada da fibra B. No departamento responsável pela embalagem, as necessidades são 6 horas por tonelada da fibra A e 8 horas para a fibra B, com um total máximo de 480 horas disponível por mês. Para o departamento responsável pelo corte das fibras, as necessidades são 10 e 6 horas por toneladas das fibras A e B, respectivamente. Esse departamento dispõe de apenas 600 horas por mês. Outros departamentos limitam a produção de fibra B a um máximo de 35 toneladas por mês. O lucro é de R$ 8 por tonelada para a fibra A e R$ 10 para a fibra B. Crie o modelo matemático para determinar as quantidades mensais de fibras A e B que devem ser produzidas de forma a maximizar os lucros.
 
-7) .
+**Variáveis de decisão**
+
+A: quantidade de fibra sintética do tipo A<br/>
+B: quantidade de fibra sintética do tipo B<br/>
+
+**Função Objetivo**
+
+Max F(A,B) = 8A + 10B
+
+**Restrições**
+
+r1: 2A + 4B <= 200 //Mistura<br/>
+r2: 6A + 8B <= 480 //Embalagem<br/>
+r3: 10A + 6B <= 600 //Corte<br/>
+r4: B <= 35 // Outros<br/>
+r5: A e B pertencem ao cunjunto dos número naturais.<br/>
+
+7) Uma microempresa produz dois tipos de jogos para adultos e sua capacidade de trabalho é de 50 horas semanais. O jogo A requer 3 horas para ser confeccionado e propicia um lucro de R$ 30,00, enquanto o jogo B requer 5 horas para ser produzido e acarreta um lucro de R$ 40,00. Crie um modelo matemático para definir quantas unidades de cada jogo devem ser produzidas semanalmente a fim de maximizar o lucro.
+
+**Variáveis de decisão**
+
+A: quantidade de jogos do tipo A<br/>
+B: quantidade de jogos do tipo B<br/>
+
+**Função Objetivo**
+
+Max F(X,Y) = 30A + 40B
+
+**Restrições**
+
+r1: 3A + 5B <= 50 //horas semanais<br/>
+r2: A e B pertecem ao conjunto dos números naturais.</br>
 
 8) Uma empresa tem disponíveis os seguintes tecidos: 16 m² de algodão, 11 m² de seda e 15 m² de lã. Para confeccionar um terno padrão, são necessários 2 m² de algodão, 1m² de seda e 1 m² de lã. Para um vestido padrão, são necessários 1 m² de algodão, 2 m² de seda e 3 m² de lã. Crie o modelo matemático para definir quantas peças de cada tipo a microempresa deve fabricar para ter o maior lucro possível, considerando que o lucro líquido de um terno é de R$ 300 e de um vestido é de R$ 500.
 
