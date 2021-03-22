@@ -1,1 +1,1 @@
-# Curso introdutório de desenvolvimento de jogos
+# Curso introdutório de desenvolvimento de jogos com Love e Unity
