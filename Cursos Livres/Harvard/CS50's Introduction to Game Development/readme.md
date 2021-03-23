@@ -1,1 +1,1 @@
-# Curso introdutório ao GameDesign
+# Curso introdutório de desenvolvimento de jogos com Love e Unity
