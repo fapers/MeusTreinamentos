@@ -1,0 +1,56 @@
+% Classes: article, report, book, letter, beamer, sciposter, abntex2, ieeetran
+% Tamanho da fonte: 10pt, 11pt, 12pt, etc
+% Tamanho do papel: a4paper, legalpaper
+% Tipos de equações: fleqn, leqno
+% Título: titlepage, notitlepage
+% Colunas: onecolumn, twocolumn
+% Impressão oneside, twoside
+\documentclass[12pt, a4paper, fleqn, titlepage, onecolumn, abntex2]{article}
+
+% Para codificação de caracteres especiais Português do Brasil
+\usepackage[english, brazil]{babel} % Usado para engine pdflatex
+
+% Pacote gráfico para inserção de pdf, png, jpg com argumentos opcionais: width, angle e size
+\usepackage{graphicx}
+
+% pacotes para legenda
+\usepackage{caption}
+
+\author{Fábio Pereira de Souza}
+\title{Minhas Anotações Projeto PPGMCS}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Título do projeto}
+
+\begin{center}
+\textsc{Implementação de Metaheurística Evolucionária
+para o Problema de Elaboração de Grade Horária
+Escolar para a Escola Estadual Delfino
+Magalhães}
+\end{center}
+
+\begin{center}
+\textbf{IMPLEMENTAÇÃO DE METAHEURÍSTICA EVOLUCIONÁRIA PARA O PROBLEMA DE ELABORAÇÃO DE GRADE HORÁRIA ESCOLAR PARA A EEDM}
+\end{center}
+
+\section{Resumo}
+
+\subsection{Anotação 1}
+
+A elaboração de horários escolares é um processo lento e trabalhoso envolvendo entidades(disciplinas, aulas, alunos, turmas) recursos(professores) em um número limitado de slots de tempo (horários) satisfazendo um conjunto de restrições. Esta pesquisa investiga uma abordagem metaheurística evolucionária para solucionar o problema de elaboração de grade horária para a escola estadual Delfino Magalhães. A abordagem atualmente utilizada pela escola, envolve procedimentos manuais para o agendamento de horários de professores nos slots de tempo e turmas. Propomos uma abordagem de agendamento utilizando Algoritmos Evolutivos em que o agendamento de todos os horários de professores é feita de forma aleatória cuja solução inicial possui uma codificação inteira e é do tipo matriz cujas colunas estão as turmas e as linhas estão os horários, em seguida a solução passa pelos operadores genéticos de seleção, cruzamento e mutação, com uso do elitismo, sendo melhorada a cada geração até atingir um determinado número de iterações, conseguindo uma solução viável que atenda principalmente as restrições hard aqui levantadas. Resultados experimentais mostram que o algoritmo é capaz de produzir soluções satisfatória para a instituição de ensino.
+
+\section{Introdução}
+
+\subsection{Anotação 1}
+Uma das maiores dificuldades encontradas antes do início do ano letivo escolar, nas escolas públicas estaduais, é o problema de elaboração de uma grade de horários escolar que seja justa a todos os envolvidos, desde alunos, professores, até a direção da escola. A escola Delfino Magalhães é uma escola pública, localizada na cidade de Montes Claros, que emprega um grupo de professores efetivos e designados e ministra aulas para o ensino fundamental II (6º ao 9º anos) e ensino médio (1º ao 3º anos). Antes do início do ano letivo, cria-se uma grade de horários para ser utilizada durante todo o ano, no entanto, o processo é muito complexo e demanda muito tempo, em alguns momentos faz-se necessário refazer o processo em função de professores que trabalham em outras escolas, licença médica e etc.
+
+A elaboração de grade de horários é um problema clássico e recorrente, pois não é possível, em grande parte, aproveitar ou atualizar uma grade de um ano para outro devido a sua complexidade combinatorial e da dificuldade em satisfazer todas as restrições. Dependendo do número de variáveis, o problema pode ser considerado pela literatura como problema NP-Difícil - são problemas intratáveis, não se consegue resolver em tempo polinomial.
+
+Existem na literatura, muitos trabalhos de timetabling (cronograma), envolvendo agendamentos de exames (provas), e cursos universitários. Com base nos aspectos levantados anteriormente, esta proposta de pesquisa busca minimizar o tempo de elaboração de uma grade de horários. A Metaheurística será desenvolvida em equipamento com processador AMD Ryzen 5 3600 6-Core Processor de 3.59 GHz e 32GB de memória RAM e sistema operacional Windows 10 64 bits. A linguagem para o desenvolvimento será o Python na sua versão 3.9.2 instalada, VSCode 1.55.0 configurado. A metaheurística a ser utilizada nessa proposta é proveniente dos algoritmos evolutivos.
+
+\section{Materiais e Métodos}
+
+\end{document}

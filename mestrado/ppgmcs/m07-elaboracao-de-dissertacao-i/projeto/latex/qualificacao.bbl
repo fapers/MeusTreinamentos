@@ -1,0 +1,31 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Brasil 2014]{br-PDI-2014}
+\abntrefinfo{Brasil}{BRASIL}{2014}
+{BRASIL. \emph{Ministério da Educação. Plano de desenvolvimento
+  institucional (PDI) 2014- 2018}.
+[S.l.], 2014. Dispon{\'\i}vel em:
+  \url{http://documento.ifnmg.edu.br/action.php?kt\_path\_info=ktcore.actions.document.view&fDocumentId=6773}.
+  Acesso em: 12 janeiro de 2016.}
+
+\bibitem[Moore e Kearsley 2007]{moore2007visao}
+\abntrefinfo{Moore e Kearsley}{MOORE; KEARSLEY}{2007}
+{MOORE, M.; KEARSLEY, G. Uma vis{\~a}o integrada.
+\emph{Educação a distância: uma visão integrada, Tradu{\c{c}}{\~a}o por
+  Roberto Galman. S{\~a}o Paulo: Thomson Learning}, 2007.}
+
+\bibitem[Santos e Neto 2008]{santos2008evasao}
+\abntrefinfo{Santos e Neto}{SANTOS; NETO}{2008}
+{SANTOS, E. M.~d.; NETO, J.~d. O. Evas{\~a}o na educa{\c{c}}{\~a}o a
+  dist{\^a}ncia: identificando causas e propondo estrat{\'e}gias de
+  preven{\c{c}}{\~a}o.
+\emph{Universidade Metropolitana de Santos (Unimes). N{\'u}cleo de
+  Educa{\c{c}}{\~a}o a Dist{\^a}ncia-Unimes Virtual. Revista Cient{\'\i}fica de
+  Educa{\c{c}}{\~a}o a Dist{\^a}ncia}, v.~2, 2008.}
+
+\end{thebibliography}

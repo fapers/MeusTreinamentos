@@ -1,0 +1,540 @@
+%% abtex2-modelo-trabalho-academico.tex, v-1.9.6 laurocesar
+%% Copyright 2012-2016 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-trabalho-academico.tex,
+%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
+% mestrado e trabalhos monograficos em geral) em conformidade com 
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em recto e verso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+	]{unimontes-ppgmsc-abntex2}
+	%{abntex2}
+
+
+
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{longtable} 
+\usepackage{multirow}
+         %tabela longa
+%\usepackage{subfig}
+
+% ---
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\newcommand\MyBox[2]{
+  \fbox{\lower0.75cm
+    \vbox to 1.7cm{\vfil
+      \hbox to 1.7cm{\hfil\parbox{1.4cm}{#1\\#2}\hfil}
+      \vfil}%
+  }%
+}
+
+
+
+	
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+%\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+% ---
+% Pacotes de citações
+% ---
+%\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+%\renewcommand{\backref}{}
+% Define os textos da citação
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma citação no texto.%
+%	\or
+%		Citado na página #2.%
+%	\else
+%		Citado #1 vezes nas páginas #2.%
+%	\fi}%
+% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Implementação de Metaheurística Evolucionária para o Problema de Criação de Grade Horária Escolar para a Escola Estadual Delfino Magalhães}
+\autor{Fábio Pereira de Souza}
+\local{Montes Claros - MG}
+\data{Março de 2021}
+\orientador{João Batista Mendes}
+\coorientador{}
+\instituicao{
+  Universidade Estadual de Montes Claros -- Unimontes
+  \par
+  Centro de Ciências Exatas e Tecnológica 
+  \par
+  Programa de Pós-Graduação em Modelagem Computacional e Sistemas}
+\tipotrabalho{Exame de Qualificação (Mestrado)}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Projeto apresentado ao Mestrado Profissional em Modelagem Computacional e Sistemas, da Universidade Estadual de Montes Claros, como exigência para realização do exame de qualificação.}
+% ---
+
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={nome trabalho},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{Mineração de dados}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto*
+% ---
+
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+A elaboração de horários escolares é um processo lento e trabalhoso envolvendo entidades(disciplinas, aulas, alunos, turmas) recursos(professores) em um número limitado de slots de tempo (horários) satisfazendo um conjunto de restrições. Esta pesquisa investiga uma abordagem metaheurística evolucionária para solucionar o problema de elaboração de grade horária para a escola estadual Delfino Magalhães. A abordagem atualmente utilizada pela escola, envolve procedimentos manuais para o agendamento de horários de professores nos slots de tempo e turmas. Propomos uma abordagem de agendamento utilizando Algoritmos Evolutivos em que o agendamento de todos os horários de professores é feita de forma aleatória cuja solução inicial possui uma codificação inteira e é do tipo matriz cujas colunas estão as turmas e as linhas estão os horários, em seguida a solução passa pelos operadores genéticos de seleção, cruzamento e mutação, com uso do elitismo, sendo melhorada a cada geração até atingir um determinado número de iterações, conseguindo uma solução viável que atenda principalmente as restrições hard aqui levantadas. Resultados experimentais mostram que o algoritmo é capaz de produzir soluções satisfatória para a instituição de ensino.
+
+ \textbf{Palavras-chave}: grade de horários escolares. algoritmo genético. metaheurística.
+\end{resumo}
+
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de tabelas
+% ---
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+% ---
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+  \item[PPGMCS] Programa de Pós-graduação em Modelagem Computacional e Sistemas
+  \item[MD] Mineração de dados
+  \item[PDI] Plano de desenvolvimento Institucional
+\end{siglas}
+% ---
+
+% ---
+% inserir lista de símbolos
+% ---
+\begin{simbolos}
+  \item[$ \Gamma $] Letra grega Gama
+  \item[$ \Lambda $] Lambda
+  \item[$ \zeta $] Letra grega minúscula zeta
+  \item[$ \in $] Pertence
+\end{simbolos}
+% ---
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+%
+% Os elementos textuais podem estar separados deste arquivo.
+% Para tanto, devem ser incluídos pelo comando \input{arquivo_introducao}
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% ----------------------------------------------------------
+\chapter{Introdução}
+%\addcontentsline{toc}{chapter}{Introdução}
+% ----------------------------------------------------------
+Uma das maiores dificuldades encontradas antes do início do ano letivo escolar, nas escolas públicas estaduais, é o problema de elaboração de uma grade de horários escolar que seja justa a todos os envolvidos, desde alunos, professores, até a direção da escola. A escola Delfino Magalhães é uma escola pública, localizada na cidade de Montes Claros, que emprega um grupo de professores efetivos e designados e ministra aulas para o ensino fundamental II (6º ao 9º anos) e ensino médio (1º ao 3º anos). Antes do início do ano letivo, cria-se uma grade de horários para ser utilizada durante todo o ano, no entanto, o processo é muito complexo e demanda muito tempo, em alguns momentos faz-se necessário refazer o processo em função de professores que trabalham em outras escolas, licença médica e etc.
+
+A elaboração de grade de horários é um problema clássico e recorrente, pois não é possível, em grande parte, aproveitar ou atualizar uma grade de um ano para outro devido a sua complexidade combinatorial e da dificuldade em satisfazer todas as restrições. Dependendo do número de variáveis, o problema pode ser considerado pela literatura como problema NP-Difícil - são problemas intratáveis, não se consegue resolver em tempo polinomial.
+
+Existem na literatura, muitos trabalhos de timetabling (cronograma), envolvendo agendamentos de exames (provas), e cursos universitários. Com base nos aspectos levantados anteriormente, esta proposta de pesquisa busca minimizar o tempo de elaboração de uma grade de horários. A Metaheurística será desenvolvida em equipamento com processador AMD Ryzen 5 3600 6-Core Processor de 3.59 GHz e 32GB de memória RAM e sistema operacional Windows 10 64 bits. A linguagem para o desenvolvimento será o Python na sua versão 3.9.2 instalada, VSCode 1.55.0 configurado. A metaheurística a ser utilizada nessa proposta é proveniente dos algoritmos evolutivos.
+
+\section{Objetivo}
+
+Esta pesquisa possui como objetivo geral a criação de uma grade de horários que atenda a instituição de ensino, Escola Estadual Delfino Magalhães.
+
+\section{Objetivos específicos}
+
+\begin{enumerate}
+\item Implementação de uma metaheurística evolucionária.
+\item Obtenção de uma solução viável (grade de horários).
+\end{enumerate}
+
+\section{Referencial Teórico}
+
+
+
+\section{Materiais e Métodos}
+\label{sec:metodologia}
+
+A presente pesquisa é do tipo exploratória com abordagem quantitativa de natureza aplicada, em que se pretende criar um modelo preditivo para resolver o problema de criação de grade horária escolar. Utiliza-se o procedimento da pesquisa bibliográfica e da pesquisa-ação para o desenvolvimento de um aplicativo, com base na pesquisa operacional, adaptando-se algoritmos evolutivos na tentativa de solucionar o problema de elaboração de grade de horários escolares da Escola Estadual Delfino Magalhães.
+
+A Metaheurística está sendo desenvolvida em equipamento com processador AMD Ryzen 5 3600 6-Core Processor de 3.59 GHz e 32GB de memória RAM e sistema operacional Windows 10 64 bits. A linguagem para o desenvolvimento será o Python na sua versão 3.9.2 instalada, VSCode 1.55.0 configurado. A metaheurística a ser utilizada nessa proposta é proveniente dos algoritmos evolutivos.
+
+	Vários estudos foram feitos na tentativa de se obter soluções satisfatórias para o problema mencionado, no entanto, a instituição ainda não tem um sistema automatizado para a tal atividade. Para esta pesquisa serão utilizados algoritmos e base de dados fictícias como base de testes, e linguagem de programação Python com quantitativos de professores, turmas, disciplinas e carga horária, não sendo necessário saber nomes de disciplinas e tampouco de professores e turmas.
+	
+O algoritmo escolhido passará por várias adaptações inspiradas nas pesquisas bibliográficas relacionadas com o tema. Será necessário um profissional para inserção dos dados que são: professores, turmas, quantidade de aulas por professor/turma, disponibilidades de horários/professores. Num momento posterior será necessário a utilização de uma base de dados real, fornecida pela escola, para comparação e análise dos resultados.
+ 
+O trabalho está organizado da seguinte forma: o capítulo 2 apresentam a definição do problema, criação do modelo, solução do modelo, validação do modelo e a implementação. O capítulo 3 apresentam os resultados e discussão e o capítulo 4 a conclusão da pesquisa. 
+
+\section{Resultados Preliminares}
+\label{sec:resultados}
+
+Foram utilizados uma base de dados real com trinta e dois professores, quatorze turmas de alunos do turno matutino, seis turmas do vespertino e duas turmas do noturno, atendendo a todas as restrições sugeridas para a instituição de ensino mencionada e obtendo boas soluções.
+
+% tabela com 25 colunas e 15 linhas, caption de tabela vem acima da mesma.
+\begin{table}[htbp]
+\caption{Grade Horária real} % mude aqui para seu título da tabela
+\resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
+\begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} & \multicolumn{24}{c|}{Meses} \\ \cline{2-25}
+\multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
+%\rowcolor[HTML]{EFEFEF}
+1 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+2 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+3 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+4 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+5 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+6 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+7 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+8 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+9 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+10 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+11 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+12 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+13 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
+\hline
+\end{tabular}
+} % fecha resizebox
+\label{gradereal} % para referencia no texto.
+\end{table} 
+
+\section{Produtos}
+\label{sec:produtos}
+
+Grade Horária para a Escola Estadual Delfino Magalhães.
+
+% tabela com 25 colunas e 15 linhas, caption de tabela vem acima da mesma.
+\begin{table}[htbp]
+\caption{Grade Horária gerada pelo algoritmo} % mude aqui para seu título da tabela
+\resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
+\begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} & \multicolumn{24}{c|}{Meses} \\ \cline{2-25}
+\multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
+%\rowcolor[HTML]{EFEFEF}
+1 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+2 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+3 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+4 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+5 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+6 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+7 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+8 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+9 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+10 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+11 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+12 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+13 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
+\hline
+\end{tabular}
+} % fecha resizebox
+\label{gradealgoritmo} % para referencia no texto.
+\end{table}
+
+
+\section{Cronograma}
+\label{sec:cronograma}
+
+% tabela com 25 colunas e 15 linhas, caption de tabela vem acima da mesma.
+\begin{table}[htbp]
+\caption{Cronograma de atividades} % mude aqui para seu título da tabela
+\resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
+\begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} & \multicolumn{24}{c|}{Meses} \\ \cline{2-25}
+\multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
+%\rowcolor[HTML]{EFEFEF}
+1 & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\ \hline
+2 & ~ & ~ & ~ & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\ \hline
+3 & ~ & ~ & ~ & ~ & ~ & x & x & x & x & x & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+4 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & x & x & x & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+5 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & x & x & x & x & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+6 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & x & x & x & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+7 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\ \hline
+8 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & x & x & x & x & x & x & x & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+9 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+10 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+11 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+12 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+13 & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
+\hline
+\end{tabular}
+} % fecha resizebox
+\label{cronograma} % para referencia no texto.
+\end{table}
+
+Atividades:
+\begin{enumerate}
+\item leitura de artigos científicos publicados
+\item dissertação
+\item definição do problema
+\item criação do modelo
+\item solução do modelo
+\item validação do modelo
+\item implementação
+\item qualificação
+\end{enumerate}
+
+\chapter{O Problema}
+
+\section{Definição}
+
+\section{Modelo Matemático}
+
+\section{Solução do modelo}
+
+\section{Validação}
+
+\section{Implementação}
+
+
+\chapter{Resultados e Discussão}
+
+
+\chapter{Conclusão}  
+\label{sec:conclusão}  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et venenatis massa, at tempor neque. Cras ultrices elit enim, ut tempor augue pulvinar et. Duis urna sapien, vulputate quis hendrerit quis, tristique et mauris. Morbi diam diam, tristique quis iaculis id, bibendum id felis. Mauris tempor eros lorem, a rutrum eros laoreet a. In viverra neque rhoncus, porta dui cursus, blandit neque. Nullam eget laoreet ligula, vel tristique diam.
+          
+          
+
+
+    
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{abntex2-modelo-references}
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%
+% Consulte o manual da classe abntex2 para orientações sobre o glossário.
+%
+%\glossary
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+%\begin{apendicesenv}
+
+% Imprime uma página indicando o início dos apêndices
+%\partapendices
+
+% ----------------------------------------------------------
+%\chapter{Quisque libero justo}
+% ----------------------------------------------------------
+
+%\lipsum[50]
+
+% ----------------------------------------------------------
+%\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+%ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+% ----------------------------------------------------------
+%\lipsum[55-57]
+
+%\end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+%\begin{anexosenv}
+
+% Imprime uma página indicando o início dos anexos
+%\partanexos
+
+% ---
+%\chapter{Morbi ultrices rutrum lorem.}
+% ---
+%\lipsum[30]
+
+% ---
+%\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+%parturient montes nascetur ridiculus mus}
+% ---
+
+%\lipsum[31]
+
+% ---
+%\chapter{Fusce facilisis lacinia dui}
+% ---
+
+%\lipsum[32]
+
+%\end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+%\phantompart
+%\printindex
+%---------------------------------------------------------------------
+
+\end{document}
+\grid
+\grid
+\grid
+\grid
