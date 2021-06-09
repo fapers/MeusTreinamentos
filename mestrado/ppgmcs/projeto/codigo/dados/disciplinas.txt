@@ -1,0 +1,12 @@
+Língua Portuguesa, POR
+Língua Inglesa, ING
+Arte, ART
+Educação Física, EDF
+Matemática, MAT
+Física, FIS
+Química, QUI
+Biologia, BIO
+Geografia, GEO
+História, HIS
+Sociologia, SOC
+Filosofia, FIL
