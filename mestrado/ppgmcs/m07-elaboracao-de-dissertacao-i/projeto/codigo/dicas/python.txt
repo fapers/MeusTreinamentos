@@ -1,0 +1,11 @@
+# Listar pacotes instalados no ambiente criado pelo conda: 
+conda list
+
+# Ativar um ambiente conda
+conda activate projeto_ppgmcs
+
+# Desativar um ambiente conda
+conda deactivate projeto_ppgmcs
+
+# Instalação de pacotes com o anaconda
+conda install -c anaconda pyqt
