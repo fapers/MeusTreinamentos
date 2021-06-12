@@ -116,3 +116,62 @@ class Professor:
                               cargahoraria=professor[3])
 
         return professor
+
+
+class MatrizCurricular:
+    '''
+    Áreas do Conhecimento, Componente Curricular, Nivel, Aulas/Semana
+    '''
+    def __init__(self, area="", componente="", nivel=None,
+                 naula=None, id=None):
+        self.id = id
+        self.area = area
+        self.componente = componente
+        self.nivel = nivel
+        self.naula = naula
+        self.status = 1
+
+        query = "CREATE TABLE IF NOT EXISTS matrizcurricular (\
+        id INTEGER PRIMARY KEY AUTOINCREMENT, area TEXT, componente TEXT, \
+        nivel INTEGER, naula INTEGER, status NUMERIC)"
+        _executar(query)
+
+    def salvar(self):
+        query = f"INSERT INTO matrizcurricular (area, componente, nivel, naula, status) VALUES\
+        ('{self.area}', '{self.componente}', {int(self.nivel)},\
+          {int(self.naula)}, {self.status})"
+        _executar(query)
+
+    def atualizar(self):
+        query = f"UPDATE matrizcurricular SET status={int(self.status)} WHERE\
+             id={int(self.id)}"
+        _executar(query)
+
+    def deletar(self):
+        query = f"DELETE FROM matrizcurricular WHERE id={int(self.id)}"
+        _executar(query)
+
+    @staticmethod
+    def get_matrizcurricular():
+        query = "SELECT * FROM matrizcurricular"
+        matrizcurricular = _executar(query)
+        return matrizcurricular
+
+    @staticmethod
+    def get_matrizid(id):
+        query = f"SELECT id, area, componente, nivel, naula, status FROM\
+                  matrizcurricular WHERE id={int(id)}"
+        matriz = _executar(query)[0]
+        matriz = MatrizCurricular(id=matriz[0],
+                                  area=matriz[1],
+                                  componente=matriz[2],
+                                  nivel=matriz[3],
+                                  naula=matriz[4],
+                                  status=matriz[5])
+        return matriz
+
+    @staticmethod
+    def get_matriznivel(nivel):
+        query = f"SELECT * FROM matrizcurricular WHERE nivel={int(nivel)}"
+        matriznivel = _executar(query)
+        return matriznivel

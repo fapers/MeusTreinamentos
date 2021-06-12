@@ -1,5 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+# from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow
 
 
 class Janela (QMainWindow):
@@ -21,4 +22,5 @@ class Janela (QMainWindow):
 
 app = QApplication(sys.argv)
 j = Janela()
-sys.exit(app.exec_())
+# sys.exit(app.exec_())
+sys.exit(app.exec())

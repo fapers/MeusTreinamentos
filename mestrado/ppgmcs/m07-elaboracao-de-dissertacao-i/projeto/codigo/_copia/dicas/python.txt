@@ -9,3 +9,19 @@ conda deactivate projeto_ppgmcs
 
 # Instalação de pacotes com o anaconda
 conda install -c anaconda pyqt
+
+# Instalação do diagrama uml
+Extensão "UMLet"
+Para exportar, com o arquivo na tela pressione CTRL+SHIFT+P e digite >UMLet:Export As PNG.
+
+# O PyQt5 ou PyQt6 não está funcionando com ambiente anaconda, ao instalar no Python do Windows, funcionou perfeitamente bem.
+
+# Exibir pacotes instalados no Python
+pip list
+
+# Exibir pacotes instalados no Python sem o pip 
+pip freeze
+
+# Instalar o PyQt5 ou 6
+pip install PyQt5
+pip install PyQt5-tools
