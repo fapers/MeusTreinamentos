@@ -25,3 +25,9 @@ pip freeze
 # Instalar o PyQt5 ou 6
 pip install PyQt5
 pip install PyQt5-tools
+
+# Instalar plugin para QML
+pesquise por qml e instale o QML language BENOIST e Cute IDE
+
+# Instalar o Color Manager
+pesquise por Color Picker e instale o Color Manager

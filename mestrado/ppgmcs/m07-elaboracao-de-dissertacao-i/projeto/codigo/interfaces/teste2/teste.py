@@ -10,7 +10,7 @@ from PySide6.QtQml import QQmlApplicationEngine
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
-    engine.load(os.path.dirname(__file__), "qml/main.qml")
+    engine.load(os.path.join(os.path.dirname(__file__), "qml/main.qml"))
 
     # CHECK EXIT APP
     if not engine.rootObjects():
