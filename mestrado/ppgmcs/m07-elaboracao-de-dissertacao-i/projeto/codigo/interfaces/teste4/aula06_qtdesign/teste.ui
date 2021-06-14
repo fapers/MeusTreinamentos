@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Fábio Pereira de Souza</author>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Gerador de Grade Horária Escolar</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_turmas">
+    <property name="title">
+     <string>Turmas</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_professores">
+    <property name="title">
+     <string>Professores</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_disponibilidade">
+    <property name="title">
+     <string>Disponibilidade</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_matriz_Curricular">
+    <property name="title">
+     <string>Matriz Curricular</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_configuracoes">
+    <property name="title">
+     <string>Configurações</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_restricoes">
+    <property name="title">
+     <string>Restrições</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_componentes_curriculares">
+    <property name="title">
+     <string>Componentes Curriculares</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_areas_de_conhecimento">
+    <property name="title">
+     <string>Áreas de Conhecimento</string>
+    </property>
+   </widget>
+   <addaction name="menu_turmas"/>
+   <addaction name="menu_professores"/>
+   <addaction name="menu_disponibilidade"/>
+   <addaction name="menu_areas_de_conhecimento"/>
+   <addaction name="menu_componentes_curriculares"/>
+   <addaction name="menu_matriz_Curricular"/>
+   <addaction name="menu_configuracoes"/>
+   <addaction name="menu_restricoes"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>

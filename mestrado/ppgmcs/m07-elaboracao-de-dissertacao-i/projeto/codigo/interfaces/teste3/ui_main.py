@@ -75,6 +75,7 @@ class Ui_MainWindow(object):
         self.Content.setObjectName(u"Content")
         self.Content.setFrameShape(QFrame.NoFrame)
         self.Content.setFrameShadow(QFrame.Raised)
+        self.Content.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2 = QHBoxLayout(self.Content)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -86,6 +87,7 @@ class Ui_MainWindow(object):
         self.frame_left_menu.setStyleSheet(u"background-color:rgb(35, 35, 35);")
         self.frame_left_menu.setFrameShape(QFrame.StyledPanel)
         self.frame_left_menu.setFrameShadow(QFrame.Raised)
+        self.frame_left_menu.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3 = QVBoxLayout(self.frame_left_menu)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -94,20 +96,38 @@ class Ui_MainWindow(object):
         self.frame_top_menus.setObjectName(u"frame_top_menus")
         self.frame_top_menus.setFrameShape(QFrame.NoFrame)
         self.frame_top_menus.setFrameShadow(QFrame.Raised)
+        self.frame_top_menus.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_4 = QVBoxLayout(self.frame_top_menus)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+
+        self.Btn_Menu_4 = QPushButton(self.frame_top_menus)
+        self.Btn_Menu_4.setObjectName(u"Btn_Menu_3")
+        self.Btn_Menu_4.setMinimumSize(QSize(0, 40))
+        self.Btn_Menu_4.setContentsMargins(0, 0, 0, 0)
+        self.Btn_Menu_4.setStyleSheet(u"QPushButton{\n"
+"	color:rgb(255, 255, 255);\n"
+"	background-color:rgb(35, 35, 35);\n"
+"	border:0px solid;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color:rgb(45,45,45);\n"
+"}")
+
+        self.verticalLayout_4.addWidget(self.Btn_Menu_4)
+
         self.Btn_Menu_3 = QPushButton(self.frame_top_menus)
         self.Btn_Menu_3.setObjectName(u"Btn_Menu_3")
         self.Btn_Menu_3.setMinimumSize(QSize(0, 40))
+        self.Btn_Menu_3.setContentsMargins(0, 0, 0, 0)
         self.Btn_Menu_3.setStyleSheet(u"QPushButton{\n"
 "	color:rgb(255, 255, 255);\n"
 "	background-color:rgb(35, 35, 35);\n"
 "	border:0px solid;\n"
 "}\n"
 "QPushButton:hover{\n"
-"	background-color:rgb(85, 170, 255);\n"
+"	background-color:rgb(45,45,45);\n"
 "}")
 
         self.verticalLayout_4.addWidget(self.Btn_Menu_3)
@@ -115,13 +135,14 @@ class Ui_MainWindow(object):
         self.Btn_Menu_2 = QPushButton(self.frame_top_menus)
         self.Btn_Menu_2.setObjectName(u"Btn_Menu_2")
         self.Btn_Menu_2.setMinimumSize(QSize(0, 40))
+        self.Btn_Menu_2.setContentsMargins(0, 0, 0, 0)
         self.Btn_Menu_2.setStyleSheet(u"QPushButton{\n"
 "	color:rgb(255, 255, 255);\n"
 "	background-color:rgb(35, 35, 35);\n"
 "	border:0px solid;\n"
 "}\n"
 "QPushButton:hover{\n"
-"	background-color:rgb(85, 170, 255);\n"
+"	background-color:rgb(45,45,45);\n"
 "}")
 
         self.verticalLayout_4.addWidget(self.Btn_Menu_2)
@@ -129,13 +150,14 @@ class Ui_MainWindow(object):
         self.Btn_Menu_1 = QPushButton(self.frame_top_menus)
         self.Btn_Menu_1.setObjectName(u"Btn_Menu_1")
         self.Btn_Menu_1.setMinimumSize(QSize(0, 40))
+        self.Btn_Menu_1.setContentsMargins(0, 0, 0, 0)
         self.Btn_Menu_1.setStyleSheet(u"QPushButton{\n"
 "	color:rgb(255, 255, 255);\n"
 "	background-color:rgb(35, 35, 35);\n"
 "	border:0px solid;\n"
 "}\n"
 "QPushButton:hover{\n"
-"	background-color:rgb(85, 170, 255);\n"
+"	background-color:rgb(45,45,45);\n"
 "}")
 
         self.verticalLayout_4.addWidget(self.Btn_Menu_1)
@@ -179,8 +201,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.Btn_Toggle.setText(QCoreApplication.translate("MainWindow", u"TOGGLE", None))
-        self.Btn_Menu_3.setText(QCoreApplication.translate("MainWindow", u"Menu 1", None))
-        self.Btn_Menu_2.setText(QCoreApplication.translate("MainWindow", u"Menu 1", None))
+        self.Btn_Menu_4.setText(QCoreApplication.translate("MainWindow", u"Menu 4", None))
+        self.Btn_Menu_3.setText(QCoreApplication.translate("MainWindow", u"Menu 3", None))
+        self.Btn_Menu_2.setText(QCoreApplication.translate("MainWindow", u"Menu 2", None))
         self.Btn_Menu_1.setText(QCoreApplication.translate("MainWindow", u"Menu 1", None))
     # retranslateUi
 

@@ -1,0 +1,22 @@
+Primeiramente instalar o PySimpleGUI
+> pip install PySimpleGUI
+
+# Criar as janelas e estilos(layout)
+# Criar as janelas iniciais
+# Criar um loop de leitura de eventos
+# # Quando a janela for fechada
+# # Quando queremos ir para a próxima janela
+# # Quando queremos voltar para a janela anterior
+# # Quando queremos fazer o pedido
+# Lógica de o que deve acontecer ao clicar os botões
+
+Para instalar uma versão específica do PySimpleGUI
+> pip install --force-reinstall PySimpleGUI==4.7.0
+
+Passos:
+0) Instale a versão 4.7.0 do PySimpleGUI
+1) Crie uma nova pasta
+2) Abra o VSCode e a pasta
+3) Crie um novo arquivo por exemplo tela.py
+4) Import PySimpleGUI as sg
+5) class TelaPython:
