@@ -14,8 +14,8 @@ from bancodados.modelo import Turma, Professor, MatrizCurricular
 # from grade.visualiza import exibe_gradefx1
 
 '''Formatação local'''
-import locale
-locale.setlocale(locale.LC_ALL, "pt_BR.utf-8")
+# import locale
+# locale.setlocale(locale.LC_ALL, "pt_BR.utf-8")
 
 
 if __name__ == '__main__':

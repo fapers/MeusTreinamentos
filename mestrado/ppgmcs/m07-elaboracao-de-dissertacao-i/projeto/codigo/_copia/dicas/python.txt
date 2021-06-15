@@ -34,3 +34,99 @@ pesquise por Color Picker e instale o Color Manager
 
 # Atualização de pacotes
 pip install --upgrade numpy
+
+# Remover ambientes conda
+conda remove --name myenv --all
+
+# Listar ambientes conda
+conda env list
+
+# Atualizar conda
+conda update -n base -c defaults conda
+conda update --all
+
+# Criar ambiente conda
+conda create -n nome python=3.10
+
+# --------- Ambiente virtual Conda
+Execute "conda create -n venv_name" e "source activate venv_name", onde venv_name é o nome do seu ambiente virtual.
+
+Corra "conda install pip". Isso instalará o pip no seu diretório venv.
+
+Encontre o diretório anaconda e localize a pasta venv real. Deve estar em algum lugar como /anaconda/envs/venv_name/.
+
+Instale novos pacotes fazendo /anaconda/envs/venv_name/bin/pip install package_name.
+
+Tudo o que você precisa fazer é abrir o Anaconda Prompt e digitar
+
+pip install package-name
+Ele será instalado automaticamente no ambiente anaconda sem precisar usar
+
+conda install package-name
+Como alguns dos pacotes conda podem não ter suporte a horas extras, é necessário instalar usando o pip e essa é uma maneira de fazê-lo
+
+Se você possui o pip instalado no anaconda, pode executar o seguinte no notebook jupyter ou no shell python vinculado ao anaconda
+
+pip.main(['install', 'package-name'])
+Verifique sua versão do pip com pip.__version__. Se for a versão 10.x.xou superior, instale seu pacote python com esta linha de código
+
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'package-name'])
+No seu notebook jupyter, você pode instalar pacotes python através do pip em uma célula dessa maneira;
+
+!pip install package-name
+ou você pode usar sua versão python associada ao anaconda
+
+!python3.6 -m pip install package-name
+
+# --------- Ambiente virtual venv
+# Criar um ambiente virtual: python3 -m venv tutorial-env
+# Funciona no cmd windows: tutorial-env\Scripts\activate.bat
+# Funciona no linux: source tutorial-env/bin/activate
+# Sair do ambiente: deactivate
+# Atualizar o pip: python3 -m pip install --upgrade pip
+# Listar pacotes: pip list ou pip freeze
+# Instalar pacotes: pip install 'PackageName'
+# Instalar pacote específico: pip install numpy
+# Instalar determinada versão: pip install 'PackageName==1.4'
+# Atualizar um pacote específico: pip install --upgrade PackageName
+# Atualizar todos os pacotes: pip install --upgrade --all
+# Desinstalar um pacote: pip uninstall PackageName
+# Criar lista de instalações: pip freeze > requirements.txt
+# Instalar a partir de uma lista: pip install -r requirements.txt
+# Listar pacotes desatualizados: pip list --outdated
+# Atualizar pacotes desatualizados: pip install --upgrade
+
+# ---------- Ambiente virtual no powershell ----
+.\venv\Scripts\Activate.ps1
+Abra o PowerShell com Adm: 
+$ Set-ExecutionPolicy Unrestricted
+$ Get-ExecutionPolicy -List
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser    RemoteSigned
+ LocalMachine    Unrestricted
+[-Scope] {Process | CurrentUser | LocalMachine | UserPolicy | MachinePolicy}
+
+
+
+# ---------- PYTHON UPGRADE UBUNTU -----------------
+# Instale o ppa: $ sudo add-apt-repository ppa:deadsnakes/ppa
+# Atualiza os pacotes: $ sudo apt-get update
+# Remover o ppa: $ sudo add-apt-repository --remove ppa:deadsnakes/ppa
+# Instale a versão Python desejada: $ sudo apt-get install python3.7 ou $ sudo apt install python3.10
+# Remover o Python: $ sudo apt remove --autoremove python3.10
+# Instalar o pip: $ sudo apt install python3-pip
+# Definir prioridades: 
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
+
+Python instalado no terminal linux
+Python 3.8.5
+Python 3.9.5
+Python 3.10.0b2
+
+# Remover um diretório linux: $ rm -rf diretorio
+
+
+
