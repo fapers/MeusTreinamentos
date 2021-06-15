@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>601</width>
+    <height>327</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>90</y>
+      <width>461</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Opção selecionada no menu:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>170</y>
+      <width>391</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(244, 244, 244);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>601</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCores">
+    <property name="title">
+     <string>Cores</string>
+    </property>
+    <addaction name="actionVerde"/>
+    <addaction name="actionVermelho"/>
+    <addaction name="actionAzul"/>
+    <addaction name="separator"/>
+    <addaction name="actionPreto"/>
+    <addaction name="actionBranco"/>
+   </widget>
+   <addaction name="menuCores"/>
+  </widget>
+  <action name="actionVerde">
+   <property name="text">
+    <string>Verde</string>
+   </property>
+  </action>
+  <action name="actionVermelho">
+   <property name="text">
+    <string>Vermelho</string>
+   </property>
+  </action>
+  <action name="actionAzul">
+   <property name="text">
+    <string>Azul</string>
+   </property>
+  </action>
+  <action name="actionPreto">
+   <property name="text">
+    <string>Preto</string>
+   </property>
+  </action>
+  <action name="actionBranco">
+   <property name="text">
+    <string>Branco</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

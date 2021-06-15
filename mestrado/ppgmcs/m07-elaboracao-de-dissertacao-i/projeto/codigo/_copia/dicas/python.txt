@@ -31,3 +31,6 @@ pesquise por qml e instale o QML language BENOIST e Cute IDE
 
 # Instalar o Color Manager
 pesquise por Color Picker e instale o Color Manager
+
+# Atualização de pacotes
+pip install --upgrade numpy

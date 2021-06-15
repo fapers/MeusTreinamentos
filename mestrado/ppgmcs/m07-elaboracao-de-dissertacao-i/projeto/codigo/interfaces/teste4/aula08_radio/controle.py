@@ -3,15 +3,16 @@ from PyQt5 import uic, QtWidgets
 
 def funcao_principal():
     if form.radioButton.isChecked():
-        print('Opção 1 selecionada')
+        opcao = 'Opção 1 selecionada'
     elif form.radioButton_2.isChecked():
-        print('Opção 2 selecionada')
+        opcao = 'Opção 2 selecionada'
     elif form.radioButton_3.isChecked():
-        print('Opção 3 selecionada')
+        opcao = 'Opção 3 selecionada'
     elif form.radioButton_4.isChecked():
-        print('Opção 4 selecionada')
+        opcao = 'Opção 4 selecionada'
     else:
-        print("")
+        opcao = ""
+    form.label_2.setText(f"Cor selecionada: {opcao}")
 
 
 
