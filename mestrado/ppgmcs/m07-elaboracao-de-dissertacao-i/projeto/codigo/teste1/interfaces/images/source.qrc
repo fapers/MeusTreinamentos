@@ -1,0 +1,27 @@
+<RCC>
+  <qresource prefix="Menu">
+    <file>add.png</file>
+    <file>add1.png</file>
+    <file>alterar.png</file>
+    <file>busca.png</file>
+    <file>class.png</file>
+    <file>disciplina.png</file>
+    <file>disponibilidade.png</file>
+    <file>executar.png</file>
+    <file>list.png</file>
+    <file>list1.png</file>
+    <file>list2.png</file>
+    <file>montar.png</file>
+    <file>montar1.png</file>
+    <file>nerd.png</file>
+    <file>print.png</file>
+    <file>professor.png</file>
+    <file>professora.png</file>
+    <file>remover.png</file>
+    <file>restricoes.png</file>
+    <file>search.png</file>
+    <file>settings.png</file>
+    <file>solucao.png</file>
+    <file>turmas.png</file>
+  </qresource>
+</RCC>

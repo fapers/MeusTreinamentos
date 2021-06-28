@@ -1,0 +1,168 @@
+# Listar pacotes instalados no ambiente criado pelo conda: 
+conda list
+
+# Ativar um ambiente conda
+conda activate projeto_ppgmcs
+
+# Desativar um ambiente conda
+conda deactivate projeto_ppgmcs
+
+# Instalação de pacotes com o anaconda
+conda install -c anaconda pyqt
+
+# Instalação do diagrama uml
+Extensão "UMLet"
+Para exportar, com o arquivo na tela pressione CTRL+SHIFT+P e digite >UMLet:Export As PNG.
+
+# O PyQt5 ou PyQt6 não está funcionando com ambiente anaconda, ao instalar no Python do Windows, funcionou perfeitamente bem.
+
+# Exibir pacotes instalados no Python
+pip list
+
+# Exibir pacotes instalados no Python sem o pip 
+pip freeze
+
+# Instalar o PyQt5 ou 6
+pip install PyQt5
+pip install PyQt5-tools
+
+# Instalar plugin para QML
+pesquise por qml e instale o QML language BENOIST e Cute IDE
+
+# Instalar o Color Manager
+pesquise por Color Picker e instale o Color Manager
+
+# Atualização de pacotes
+pip install --upgrade numpy
+
+# Remover ambientes conda
+conda remove --name myenv --all
+
+# Listar ambientes conda
+conda env list
+
+# Atualizar conda
+conda update -n base -c defaults conda
+conda update --all
+
+# Criar ambiente conda
+conda create -n nome python=3.10
+
+# --------- Ambiente virtual Conda
+Execute "conda create -n venv_name" e "source activate venv_name", onde venv_name é o nome do seu ambiente virtual.
+
+Corra "conda install pip". Isso instalará o pip no seu diretório venv.
+
+Encontre o diretório anaconda e localize a pasta venv real. Deve estar em algum lugar como /anaconda/envs/venv_name/.
+
+Instale novos pacotes fazendo /anaconda/envs/venv_name/bin/pip install package_name.
+
+Tudo o que você precisa fazer é abrir o Anaconda Prompt e digitar
+
+pip install package-name
+Ele será instalado automaticamente no ambiente anaconda sem precisar usar
+
+conda install package-name
+Como alguns dos pacotes conda podem não ter suporte a horas extras, é necessário instalar usando o pip e essa é uma maneira de fazê-lo
+
+Se você possui o pip instalado no anaconda, pode executar o seguinte no notebook jupyter ou no shell python vinculado ao anaconda
+
+pip.main(['install', 'package-name'])
+Verifique sua versão do pip com pip.__version__. Se for a versão 10.x.xou superior, instale seu pacote python com esta linha de código
+
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'package-name'])
+No seu notebook jupyter, você pode instalar pacotes python através do pip em uma célula dessa maneira;
+
+!pip install package-name
+ou você pode usar sua versão python associada ao anaconda
+
+!python3.6 -m pip install package-name
+
+# --------- Ambiente virtual venv
+# Criar um ambiente virtual: python3 -m venv tutorial-env
+# Funciona no cmd windows: tutorial-env\Scripts\activate.bat
+# Funciona no linux: source tutorial-env/bin/activate
+# Sair do ambiente: deactivate
+# Atualizar o pip: python3 -m pip install --upgrade pip
+# Listar pacotes: pip list ou pip freeze
+# Instalar pacotes: pip install 'PackageName'
+# Instalar pacote específico: pip install numpy
+# Instalar determinada versão: pip install 'PackageName==1.4'
+# Atualizar um pacote específico: pip install --upgrade PackageName
+# Atualizar todos os pacotes: pip install --upgrade --all
+# Desinstalar um pacote: pip uninstall PackageName
+# Criar lista de instalações: pip freeze > requirements.txt
+# Instalar a partir de uma lista: pip install -r requirements.txt
+# Listar pacotes desatualizados: pip list --outdated
+# Atualizar pacotes desatualizados: pip install --upgrade
+
+# ---------- Ambiente virtual no powershell ----
+.\venv\Scripts\Activate.ps1
+Abra o PowerShell com Adm: 
+$ Set-ExecutionPolicy Unrestricted
+$ Get-ExecutionPolicy -List
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process       Undefined
+  CurrentUser    RemoteSigned
+ LocalMachine    Unrestricted
+[-Scope] {Process | CurrentUser | LocalMachine | UserPolicy | MachinePolicy}
+
+
+
+# ---------- PYTHON UPGRADE UBUNTU -----------------
+# Instale o ppa: $ sudo add-apt-repository ppa:deadsnakes/ppa
+# Atualiza os pacotes: $ sudo apt-get update
+# Remover o ppa: $ sudo add-apt-repository --remove ppa:deadsnakes/ppa
+# Instale a versão Python desejada: $ sudo apt-get install python3.7 ou $ sudo apt install python3.10
+# Remover o Python: $ sudo apt remove --autoremove python3.10
+# Instalar o pip: $ sudo apt install python3-pip
+# Definir prioridades: 
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+$ sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
+
+Python instalado no terminal linux
+Python 3.8.5
+Python 3.9.5
+Python 3.10.0b2
+
+# Remover um diretório linux: $ rm -rf diretorio
+
+
+# COMANDOS GIT
+Iniciar um repositório dentreo de uma pasta: $ git init
+Clonar um repositório: $ git clone <endereço>
+Verificar o status de um git: $ git status
+Adicionar arquivos/pastas ao repositório local: $ git add .
+Commitar arquivos no repositório local: $ git commit -m "informações"
+Publicar as alterações no gitHub: $ git push
+Sincronizar alterações com data inferior: $ git pull
+
+Criar um .gitignore global: $ touch ~/.gitignore
+$ git config --global core.excludesFile ~/.gitignore
+
+Criar um .gitignore local: $ touch ~/.gitignore
+$ git config --global core.excludesFile ~/.gitignore
+
+Nomes de arquivos literais: .tempArq. 
+arqTeste # ignora o arquivo (ou diretório)
+*.log # ignora todos os arquivos com extensão .log
+arq* # ignora todos os arquivos iniciados com arq
+?rq # ignora todos os arquivos não importando o primeiro caractere, mas que possua rq na sequência
+ 
+Diretórios temp/
+dirTeste/ # ignora o diretório dirTeste e seu arquivos
+**/dirTeste # ignora todos os diretórios de nome dirTeste
+!saída.log # não ignora o arquivo saída.log
+
+Caracteres curinga
+* 0 ou mais caracteres (exceto /)
+? Um único caractere (exceto /)
+! Negação (negar ignore)
+# Comentários no arquivo gitignore
+
+
+
+
+
+
